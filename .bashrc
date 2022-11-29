@@ -10,3 +10,4 @@ fi
 PATH=~/bin:$PATH 
 
 PS1='[\u@\h \W]\$ '
+set -o vi
