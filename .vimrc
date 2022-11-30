@@ -18,14 +18,17 @@ call plug#begin()
 	Plug 'MarcWeber/vim-addon-mw-utils'
 
 	Plug 'tomtom/tlib_vim'
+
+	Plug 'lervag/vimtex'
+
 call plug#end()
 
 
 set laststatus=2
 
 let mapleader = " "
-nnoremap <leader>w :NERDTree<CR>
-let NERDTreeShowHidden=1
+"nnoremap <leader>w :NERDTree<CR>
+"let NERDTreeShowHidden=1
 
 "Snip-Mate
 "let g:snipMate = { 'snippet_version' : 1 }
@@ -36,7 +39,9 @@ nmap<silent> <C-h> <C-w>h
 nmap<silent> <C-k> <C-w>k
 nmap<silent> <C-l> <C-w>l
 
-
+let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
 
 source  ~/.vim/.config/Snip-Mate.vim
 
+source  ~/.vim/.config/NERDTree.vim
