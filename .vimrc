@@ -1,7 +1,12 @@
 "General settings
+let mapleader = " "
 set number relativenumber
 set scrolloff=5
 syntax on
+set colorcolumn=120
+set cursorline
+:nnoremap <Leader>c :set cursorcolumn!<CR>
+
 
 "Plugin call
 call plug#begin()
@@ -23,10 +28,8 @@ call plug#begin()
 
 call plug#end()
 
-
 set laststatus=2
 
-let mapleader = " "
 "nnoremap <leader>w :NERDTree<CR>
 "let NERDTreeShowHidden=1
 
