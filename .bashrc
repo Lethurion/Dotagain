@@ -11,3 +11,5 @@ PATH=~/bin:$PATH
 
 PS1='[\u@\h \W]\$ '
 set -o vi
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
