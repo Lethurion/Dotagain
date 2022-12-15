@@ -4,6 +4,7 @@ snippet test
 
 
 
+
 snippet main
 	int main(int argc, char* argv[]) {
 		$1
@@ -26,3 +27,93 @@ snippet cout
 
 snippet cin
 	std::cin >> $1 ;
+
+
+snippet stack
+	typedef int Stack_element;
+
+	const int stacksize = 1000;
+	Stack_element stack[Stack_element]
+	int top  = 0;
+
+	void push (Stack_element insert) {
+		stack[top] = e;
+		top = top + 1;
+		}
+		
+	bool empty (); {
+	return top == 0;
+	}
+
+	Stack_element pop(); {
+	top = top - 1;
+	return stack[top];
+	
+
+snippet chlist
+	typedef int List_element;
+
+	struct ListElem {
+		ListElem* next;
+		List_element value;
+		};
+
+	struct List {
+		int count;
+		ListElem* first;
+		};
+
+	void empty_list (List* start) {
+		start->first = 0;
+		start->count = 0;
+		}
+
+	ListElem* find_first_( List l, int x) {
+	for (ListElem* p = l.first; p != 0; p = p = p->next )
+		if (p->value == x) return p;
+	return 0;
+	}
+
+	ListElem* find_last_Elem (List l) {
+		ListElem* p = l.first;
+		for (int i = 1; i < l.count; i++)
+			p = p->next;
+		return p;
+		}
+			
+
+	void insert_in_List(List* list, ListElem* where, ListElem * what) {
+		if (where == 0) {
+			what->next = list->first;
+			list->first = what;
+			list->count = list->count +1;
+			}
+		else {
+			what->next = where->next;
+			where->next = what;
+			list->count = list->count + 1;
+			}
+
+			}
+
+	ListElem* remove_from_List( List* list, ListElem* where) {
+		ListElem* p;
+		if (where == 0) {
+		p = list->first;
+		if(p!= 0 ) {
+			list->first = p->next;
+			list->count = list->count - 1;
+			}
+			return p;
+			}
+		p = where->next;
+		if (p != 0 ) {
+		where->next = p->next;
+		list->count = list->count - 1;
+		}
+		return p;
+		}
+
+
+
+
