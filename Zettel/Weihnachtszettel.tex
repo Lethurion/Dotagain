@@ -1,0 +1,426 @@
+\documentclass{article}
+\author{Kenneth Herr, Luca Gilles}
+\title{Zettel 10}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\usepackage{amsmath, amssymb, romannum, geometry}
+\geometry{left = 20mm, top = 20mm}
+\begin{document}
+
+\pagenumbering{arabic}
+
+\begin{table} [t!]
+  \begin{tabular}{c | c | c | c | c | c | c}
+    1   & 2 & 3 & 4 &  5 & 6 & \(\sum\) \\
+    \hline
+      &   &   &    &  & & \\
+    \end{tabular}
+  \end{table}
+
+  \maketitle
+  \section{Aufgabe 1}
+  \subsection{Basis von Ann(W)}
+  \begin{math}
+    \begin{pmatrix}
+      2 & 1 &  0 & 0 & 0 \\
+      3 & 5 & -1 & -3 & 0 \\
+      0 & 3 & -1 & 0 & 0 \\
+    \end{pmatrix}
+    \begin{matrix}
+      & Tausche  \; \romannum{1} \; und \; \romannum{2} \\
+     & Tausche \; \romannum{2} \; und \; \romannum{3} \\
+      \end{matrix}
+    \begin{pmatrix}
+      3 & 5 & -1 & -3 & 0 \\
+      0 & 3 & -1 & 0 & 0 \\
+      2 & 1 &  0 & 0 & 0 \\
+    \end{pmatrix}
+    \begin{matrix}
+      & \romannum{1} \cdot  - \frac{1}{3} \\
+      & \romannum{2} \cdot -1 \\
+    \end{matrix}
+      \begin{pmatrix}
+        1 &   - \frac{5}{3} & \frac{1}{3}& 1 & 0 \\
+        0 & -3 & 1 & 0 & 0 \\
+      0 & 0 &  1 & 0 & 0 \\
+      \end{pmatrix}
+  \newline
+  \newline
+  \newline
+        \begin{matrix}
+          & \romannum{1} +  \romannum{2} \cdot - \frac{1}{3} \\
+\end{matrix}
+\begin{pmatrix}
+  -1 & -\frac{2}{3} & 0 & 1 & 0 \\
+  0 & -3 & 1 & 0 & 0 \\
+  2 & 1 & 0 & 0 & 0\\
+\end{pmatrix}
+\begin{matrix}
+   & \romannum{2} + 3 \cdot \romannum{3} \\
+   & \romannum{2} + \frac{2}{3} \cdot \romannum{3} \\
+\end{matrix}
+\begin{pmatrix}
+  \frac{1}{3} & 0 & 0 & 1 & 0 \\
+  6 & 0 & 1 & 0 & 0 \\
+  2 & 1 & 0 & 0 & 0 \\
+  \end{pmatrix}
+\end{math}
+Durch Anwendung des $-1$-Tricks erhaelt man als Basis von $Ann(W)$ den Vektor:
+\begin{math}
+  \begin{pmatrix}
+    & -1 \\
+    & 2 \\
+    & 6 \\
+    &  \frac{1}{3} \\
+  \end{pmatrix}
+  \end{math}
+  
+\subsection{Basis von $ U \cap W$}
+$ U \cap W = Null(Ann(U) + Ann(W)) $. Daher berechne wir als naechtest den Ann(U):
+\newline
+\newline
+\newline
+\begin{math}
+  \begin{pmatrix}
+    3 & 0 & 6 & -1 & 0 \\
+    1 & 1 & 1 & 1 & 0 \\
+  \end{pmatrix}
+  \;
+    \begin{matrix}
+      \romannum{1} \cdot \frac{1}{3} \\
+    \end{matrix}
+    \;
+    \begin{pmatrix}
+      1 & 0 & 2 & - \frac{1}{3} & 0 \\
+      1 & 1 & 1 & 1 & 0 \\
+      \end{pmatrix}
+      \;
+      \begin{matrix}
+        \romannum{2} - \romannum{1} \\
+      \end{matrix}
+      \;
+      \begin{pmatrix}
+      1 & 0 & 2 & - \frac{1}{3} & 0 \\
+        0 & 1 & -1 & \frac{4}{3} & 0 \\
+        \end{pmatrix}
+      \end{math}
+      \newline
+      Durch Anwendung des -1-Tricks erhaelt man dann die Vektoren
+      \begin{math}
+        \begin{pmatrix}
+          & 2 \\
+          & -1 \\
+          & -1 \\
+          & 0 \\
+        \end{pmatrix}
+        und
+        \begin{pmatrix}
+          & - \frac{1}{3} \\
+          &  \frac{4}{3} \\
+          & 0 \\
+          & -1 \\
+          \end{pmatrix}
+        \end{math}
+        als Basis von $Ann(U)$.
+        \newline
+        \newline
+        \newline
+        $Null(Ann(U) + Ann(W))$
+        \newline
+        \newline
+        \newline
+        \begin{math}
+          \begin{pmatrix}
+            -1 & 2 & 6 & \frac{1}{3} & 0 \\
+            2 & -1 & -1 & 0 & 0 \\
+            - \frac{1}{3} & \frac{4}{3} & 0 & -1 & 0 \\
+            \end{pmatrix}
+            \;
+            \begin{matrix}
+              & \romannum{1} \cdot -1 \\
+              & \romannum{2} + 2 \cdot \romannum{1} \\
+              & \romannum{3} - \frac{1}{3} \cdot \romannum{1} \\
+            \end{matrix}
+            \;
+            \begin{pmatrix}
+              1 & -1 & -6 & -\frac{1}{3} & 0 \\
+              0 & -3 & -11 & -\frac{2}{3} & 0 \\
+              0 & -\frac{2}{3} & 2 & \frac{10}{9} & 0 \\
+              \end{pmatrix}
+              \begin{matrix}
+                & \romannum{2} \cdot -\frac{1}{3} \\
+                & \romannum{1} + 2 \cdot \romannum{2} \\
+                & \romannum{3} + \frac{2}{3} \cdot \romannum{2} \\
+                \end{matrix}
+                \;
+                \begin{pmatrix}
+                  1 & 0 & \frac{4}{3} & \frac{1}{9} & 0 \\
+                  0 & 1 & \frac{11}{3} & \frac{2}{9} & 0 \\
+                  0 & 0 & \frac{40}{9} & \frac{34}{27} & 0 \\
+                \end{pmatrix}
+                \newline
+                \newline
+                \newline
+                \begin{matrix}
+                  & \romannum{3} \cdot - \frac{9}{40} \\
+                  & \romannum{2} - \frac{11}{3} \cdot \romannum{3} \\
+                  & \romannum{1} - \frac{4}{3} \cdot \romannum{3} \\
+                  \end{matrix}
+                  \;
+                  \begin{pmatrix}
+                    1 & 0 & 0 & \frac{22}{45} & 0 \\
+                    0 & 1 & 0 & \frac{227}{180} & 0 \\
+                    0 & 0 & 1 & \frac{17}{60} \\
+                    \end{pmatrix}
+                  \end{math}
+                  Mithilfe des -1-Tricks erhaellt mann nun den Vektor
+                  \begin{math}
+                    \begin{pmatrix}
+                      & \frac{22}{45} \\
+                      & \frac{227}{180} \\
+                      & \frac{17}{60} \\
+                      & -1 \\
+                      \end{pmatrix}
+                    \end{math}
+                    als Basis von $U \cap W$.
+
+                    Da $dim(U \cap W)$ = 1 gilt, erhaelt man durch die Dimensionsformel $dim( U + W) = 4 = dim(V)$. Somit gilt $U + W = V$.
+
+                     \hfill $\square$
+  \section{Aufgabe 2 Noch skalare Multiplikation einfuegen}
+  Sei im folgenden $\underline{0} \in Abb(V^{n},W)$ die Nullabbildung.
+
+  \subsection{$Lin_{n}(V,W$}
+  $\underline{0} \in Lin_{n}(V,W)$, da $\forall (v_{1} ,\dots, v_{n}) \in V^{n}, \forall \lambda \in K :\newline \newline  \lambda \cdot \underline{0}(v_{1},\dots ,v_{n}) = \lambda \cdot 0  = \underline{0}(v_{1},\dots, \lambda v_{i}, \dots, v_{n}) \newline \newline
+  \underline{0}(v_{1} ,\dots, v_{i} ,\dots, v_{n}) + \underline{0}(v_{1}, \dots ,v_{i}^{'} ,\dots v_{n}) = 0 + 0 = 0 = \underline{0}(v_{1}, \dots v_{i}+ v_{i}^{'}, \dots v_{n}) \newline \newline \forall i \in \{1\dots n\}$
+
+  Sein $f, g \in Lin_{n}(V,W), (v_{1} ,\dots ,v_{n}) \in V^{n} beliebig$:
+
+  $$f(v_{1},\dots,v_{n}) + g(v_{1},\dots,v_{n})$$
+  Da per Definition $f$ und $g$ in jeder Komponente Linear sind, koennen wir dies Umschreiben:
+
+  $$ = f(v_{1}) + g(v_{1}) + \cdots + f(v_{n}) + g(v_{n}) = (f + g)(v_{1}) + \dots + (f +g)(v_{n}) = (f + g)(v_{1}, \dots , v_{n})$$.
+  Sei $\lambda \in K$, $f \in Lin_{n}(V,W)$.
+  $$\lambda \cdot f(v_{1}, \dots ,v_{n}) = \lambda w $$
+  Per def von n-linearitaet $\implies$
+  $$\lambda w = f(v_{1},\dots,\lambda v_{i},\dots, v_{n}) \;  \forall i \in \{i\dots n\}, w \in W $$
+  Somit sind sowohl \[f + g \in Lin_{n}(V,W)\] als auch \[\lambda f \in Lin_{n}(V,W)\] und $Lin_{n}(V,W)$ ist ein Untervektorraum von $Abb(V^{n},W)$
+  \subsection{$Alt_{n}(V,W)$}
+  Wir zeigen das $Alt_{n}(V,W)$ ein U-VR von $Lin_{n}(V,W)$, was dann auch bedeuten wird das es ein U-VR von $Abb(V^{n},W)$ ist.
+  $$\underline{0} \in Alt_{n}(V,W), da \; \underline{0}(v_{1}, \dots , v_{i},v_{i+1},\dots,v_{n}) = 0 = \underline{0}(v_{1}, \dots , v_{i+1},v_{i},\dots,v_{n}) $$
+  sowie
+  $$ \lambda \cdot \underline{0}(v_{1}, \dots , v_{i},v_{i+1},\dots,v_{n}) = 0 =  \underline{0}(v_{1}, \dots , \lambda v_{i},v_{i+1},\dots,v_{n}),
+  \newline \forall \lambda \in K, \forall (v_{1},\dots, v_{n}) \in V^{n}$$.
+
+  Sei $f, g \in Alt_{n}(V,W)$ sowie $\lambda \in K$.
+  \[f(v_{1},\dots, v_{n}) + g(v_{1},\dots,v_{n}) = (f + g)(v_{1}, \dots, v_{n})  \]
+  da $Alt_{n}(V,W) \subseteq Lin_{n}(V,W)$ ist und somit $f,g$ n-linear sind.
+
+  Es bleibt zu zeigen, dass $(f + g)$ alternierend ist. Sei deshalb $(v_{1}, \dots, v_{n}) \in V_{n}$, mit mindestens zwei eintraegen vertauscht, so dass $sng(v_{1},\dots,v_{n}) = -1$:
+
+  $$ (f + g)(v_{1}, \dots, v_{n}) =  f(v_{1},\dots, v_{n}) + g(v_{1},\dots,v_{n}) = 0 + 0 + 0$$
+  Somit ist $Alt_{n}(V,W)$ ein U-VR von $Lin_{n}(V,W)$ und somit auch von $Abb(V^{n},W)$
+
+  \hfill $\square$
+\section{Aufgabe 3}
+\section{Aufgabe 4}
+\section{Aufgabe 5}
+\subsection{}
+Wir ueberpruefen die Unterraumaxiome. Sei $\underline{0} \in Abb(\mathbb{R}, \mathbb{R})$ dazu das Neutrale Element.
+
+1. $\underline{0} \in V$, da fuer $a = b = c = 0 gilt: \; f(x) = 0, \newline
+\lambda \cdot f(x) = \lambda(0 + 0x + 0x^{2}) = 0 \; sowie \; f(x) + g(x) = 0 + a^{'} + 0x + b^{'}x + 0x^{2} + c^{'}x^{2} = a^{'} + b^{'}x + c^{'}x^{2} = g(x)\; \forall x \in \mathbb{R}$
+
+Somit ist $\underline{0} \in V$.
+
+
+
+Sei nun $f,g \in V$ und $\lambda \in K$
+$$(f + g)(x) = a + a^{'} + bx + b^{'}x + cx^{2} + c^{'}x^{2} = (a+a^{'}) + (b + b^{'})x + (c + c^{'})x^{2} \in V $$
+sowie
+$$ \lambda \cdot f(x) = \lambda (a + bx + cx^{2}) = \lambda a + \lambda bx + \lambda cx^{2} \in V$$
+Somit ist $V$ ein U-VR von $Abb(\mathbb{R},\mathbb{R})$
+\subsection{}
+1. \underline{B}:
+
+Anhand der Definition von $e_{i}$ ergeben sich fuer $i \in  \{0,1,2\}$:
+\begin{math}
+\begin{center}
+  \begin{matrix}
+    & e_{0} = x^{0} = 1 \\
+    & e_{1} = x^{1} = x \\
+    & e_{2} = x^{2} = x^{2}\\
+    \end{matrix}
+  \end{center}
+\end{math}
+Darus koennen wir nun die Matrix: \\
+\\
+\begin{math}
+\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & x & 0 \\
+  0 & 0 & x^2 \\
+\end{pmatrix}
+\end{math}
+bilden. Jedes $f \in V$ kann daher als Koordinatenvektor
+\begin{math}
+  \begin{pmatrix}
+    &a \\
+    &b \\
+    &c \\
+  \end{pmatrix}
+\end{math}
+geschreiben werden. Daher ist $\{e_{o},e_{1},e_{2}\}$ eine Basis von $V$ und \underline{B} eine geordnete Basis.
+\\
+\\
+2. \underline{C}:
+Sein $f_{i}$ wie in der Aufgabe definiert. Schreibt man diese Vektoren in eine Matrix so erhaelt mann: \\
+\\
+\begin{math}
+  \begin{pmatrix}
+    1 & 0 & x^{2} \\
+    0 & 0 & x^{2} \\
+    1 & x & x^{2} \\
+  \end{pmatrix}
+  \begin{matrix}
+    & \romannum{3} - \romannum{1} \\
+    &\romannum{1} - \romannum{2} \\
+    & Tausche \; \romannum{2} \; und \; \romannum{3} \\
+  \end{matrix}
+  \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & x & 0 \\
+    0 & 0 & x^{2} \\
+    \end{pmatrix}
+  \end{math}
+  Da wir eine andere Basis von $V$ durch Zeilenumformungen erhalten haben, folgt das auch das $\{f_{0},f_{1},f_{2}\}$ eine Basis und  \underline{C} = $(f_{0},f_{1},f_{2})$ eine geordnete Basis von $V$ bildet, z.b.
+  \subsection{}
+  Als erstes stellen wir fest, dass die Matrix zu \underline{B} gerade die Einheitsmatrix von $V$ bildet. Daher ist die Angegenbene Matrix grade schon die Abbildungsmatrix von $\phi$. Desweiteren ist $\phi$ Die Basentransformation von \underline{B} zu \underline{C}. Da \underline{C} bereits eine Basis von $V$ bildet, ist $\phi$ ein Endomorphismus zu $V$.
+
+  \\
+  Berechnen sie $Mat_{\underline{B}}^{\underline{C} }(\phi)$ \\
+  \begin{math}
+    \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      2 & 1 & 2 \\
+      1 & 1 & 1 \\
+      2 & 1 & 2 \\
+      \end{pmatrix}
+    \end{math}
+    \\
+    Berechnen sie $Mat^{\underline{B}}_{\underline{C}}(\phi)$: \\
+    \begin{math}
+    \begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{pmatrix}
+    \cdot
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    \cdot
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{pmatrix}
+  \end{math}
+  \\
+  Berechnen sie  $Mat^{\underline{C}}_{\underline{C}}(\phi)$ : \\
+  \begin{math}
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}
+    \cdot
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+      \end{pmatrix}
+      \cdot
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+    \end{pmatrix}^{-1}
+    =
+      \begin{pmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      1 & 1 & 1 \\
+      \end{pmatrix}
+    \end{math}
+    \\
+  $Mat^{\underline{C}}_{\underline{C}}(\phi)$ ist dann $Mat(\underline{B}) \cdot Mat(\underline{C})$ denke ich?
+  Und $Mat^{\undlerline{C}}_{\underline{C}}(\phi)$ muesste dann $Mat(\phi)$ sein lediglichl, da sich $c^{-1}$ und $c$ auscaenceln??
+\section{Aufgabe 6}
+\subsection{}
+zz.: $\mathbb{L}(A,0) = \mathbb{L}(B,0)$
+Per Definition unterscheiden sich $A$ und $B$ lediglich durch $m -n$ Nullzeilen. Betrachte nun $B$. Durch Zeilenvertauschungen kann man $B$ zu $A$ umformen. Ein $v \in \mathbb{L}(A,0)$ kann somit mit einem $v^{`} \in \mathbb{L}(B,0)$ identifiziert werden, wobei sich $v$ und $v^{`}$ nur durch $m - n$ Nullen am Endoe von $v^{`}$ unterscheiden. Somit kann eine Gleichheit eigesehen werden.
+\subsection{}
+zz.: $S$ ist l.u. in $V_{n} (K)$
+
+Sei $v \in S$ beliebig. Wenn $v$ linear abhaengig in $S$ sein soll, muss $v \neq  0$ gelten.
+$\implies v$ ist keine Pivotspalte in $B$, da diese in $S$ zu einer Nullspalte werden. Laut der Def. von B besitzt $v$ nun aber eine 0 an der $i$-ten Stelle, da da gerade eine Nullzeile in $B$ eingefuegt worden ist. Subtrahiert man nun aber $e_{i}$ von $v$, um $v$ in $S$ zu erhalten, wird die $i$-te stelle zu einer $-1$, waehrend bei allen anderen$s \in S$ die $i$-te Stelle 0 bleibt. Somit kann v nicht aus einer Linearkombination von Elementen aus $S$ gebildet werden und $S$ ist linear unabhaengig.
+\subsection{}
+zz.: $dim(L(S)) = dim(\mathbb{L}(B,0))$
+Nach Satz 9.2 gilt:
+$$ dim(\mathbb{L}(B,0)) =  n - Rang(B)$$
+Laut der Def. von $S$ besitzt $S$ $n$ - die Anzahl der Pivotspalten von $B$ Spalten. Da Zeilenrang = Spaltenrang und per Def.: des Ranges $\implies$ gilt $\#S = n - Rang(B)$. Und da wir bereits in Aufgabe b) gezeigt haben dass S l.u. ist, $\implies dim(L(S)) = \#S$. Somit wurde die Aussage gezeigt.
+\subsection{}
+zz.: $Bv_{j} = 0 \; \forall v_{j} \in S$
+Betrachte als erstes die Def. der Multiplikation einer Spalte einer Matrix mit einem Spaltenvektor. Es gilt zu zeigen, dass;
+\begin{equation}
+\sum_{i = 1}^{n} b_{i}  v_{i} = 0
+\end{equation}
+Wir zeigen dies, indem wir zeigen das $\forall b_{j} \in B, \forall v_{j} \in S : (b)_{j,i} (v)_{i,j} = 0$.
+Da $B$ per Definition Nullzeilen enthalten kann, gilt die Aussage bereits fuer diese. Daher betrachten wir im folgenden nur Zeilen $B_{j}$ mit $B_{j} \neq 0$. $\forall (b)_{i,j} \in B$ gilt, dass $(b)_{i,j} \neq 0$ nur dann der Fall ist, wenn $i = j$ oder $i \in \{j_{1} \dots j_{r}\} $ eine Pivotspalte von $B$ ist. Alle anderen Produkte geben daher bereits 0.
+Betrachte nun ein $v_{j} \in S$. Wie bereits in $c)$ festgetesllt worden ist, gilt fuer ein $v_{j} \in S$ dass $v_{j}$ and allen Stellen $i \in \{j_{1} \dots j_{r}\}$ bis auf einer eine 0 Stehen hat. Somit gibt es nur zwei Teilsummen, die nicht per Definition zu 0 werden, naehmlich wenn fuer $(b)_{i,j} \; i = j$ gilt und wenn fuer $(v)_{j,k} \:j = k$ gilt. $(b)_{i,j}$ wird mit $(v)_{j,i}$ und $(v)_{j,k}$ mit $(b)_{k,j}$ verrechnet. Wenn jedoch $(v)_{j,k}$ and der $k-ten$ Stelle ungleich Null ist, dann bedeutet dies, dass $(v)_{j}$ aus der $k-ten$ Spalte von $B$ hervorgegangen ist. Somit gilt $(b)_{k,j} = (v)_{j,i}$ und da $(b)_{i,j} = 1$ und $(v)_{j,k} = -1$ folgt $(b)_{i,j} \cdot (v)_{j,i} + (b)_{k,j} \cdot (v)_{j,k} =0$.
+
+\subsection{}
+zz.: $S$ ist Basis von $\mathbb{L}(A,0)$
+Nach $a)$ gilt $\mathbb{L}(A,0) = \mathbb{L}(B,0)$. Nach $d)$ gilt $Bv_{j} = 0 \; \forall v_{j} \in S$ und somit $S \in \mathbb{L}(B,0)$. Nach $c)$ gilt dass $dim(\L(S)) = \mathbb{L}(B,0)$ ist. Somit ist $S$ eine Basis von $\mathbb{L}(B,0)$ undn somit auch von $\mathbb{L}(A,0)$.
+
+\hfill $\square$
+\end{document}
