@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+
+// Datentyp Complex in der Datei canvas.hh
+#include "canvas.hh"
+
+// Summiert zwei komplexe Zahlen z und c und schreibt das Ergebnis in z
+void add_complex( Complex z, Complex c )
+{z.real += c. real;
+  z.imag += c.imag;
+}
+
+// Multipliziert zwei komplexe Zahlen z und c und schreibt das Ergebnis in z
+void multiply_complex( Complex z, Complex c)
+{Complex buffer;
+  buffer.real = (z.real * c.real - z.imag * c.imag);
+  buffer.imag = (z.real * c.imag + c.real * z.imag);
+  z = buffer;
+}
+
+// Betrag einer komplexen Zahl
+double betrag(Complex z)
+{
+  return (std::sqrt((z.real*z.real) - (z.imag*z.imag)) );
+  // TODO Nutzen Sie std::sqrt zur Wurzelberechnung
+}
+
+// TODO Funktion mandelbrot()
+void mandelbrot(Canvas& canvas, double threshold, int maxIt, std::string filename) {
+  for (int i = 0; i <= canvas.height(); i++) {
+    for (int j = 0; j <= canvas.width(); j++) {
+      Complex c = canvas.coord(i,j);
+      Complex z;
+      z.real = 0;
+      z.imag = 0;
+      int counter = 0;
+      while(counter <= maxIt && betrag(z) < threshold) {
+        multiply_complex(z,z);
+        add_complex(z,c);
+        counter++;
+      }
+      int value = std::log(counter) * 100;
+      canvas.writePixel(i,j,value);
+    }
+  }
+  canvas.write(filename);
+}
+int main()
+{
+  Canvas canvas(-1,0, 100,100, 100,100);
+  mandelbrot(canvas, 100, 100, "mandelbrotbild");
+  return 0;
+}
